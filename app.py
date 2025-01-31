@@ -29,7 +29,7 @@ def predict():
     data = [float(x) for x in request.form.values()]  # data is a list
     input_data = np.array(data).astype('float64').reshape(1, -1)  # Remove .values()
     output = bike_model.predict(input_data)[0]
-    return render_template("home.html", prediction_text=f"Total Rentals: {output}")
+    return render_template("home.html", prediction_text=f"Total Rentals: {output:.2f}")
 
 
 if __name__=="__main__":
