@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 output: github_document
 ---
 
-# Bike Share Demand Prediction ([Click-To-Use-App](https://your-app-url.com))
+# Bike Share Demand Prediction ([Click-To-Use-App](https://bikerentalcicd-1.onrender.com))
 
 ![Python](https://img.shields.io/badge/Python-3.9-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-2.0-green.svg)
@@ -14,8 +14,8 @@ output: github_document
 ![Docker](https://img.shields.io/badge/Docker-20.10-lightblue.svg)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-yellow.svg)
 
-## Project Video  (Click Below Image)
-[![Project Video](https://github.com/yourusername/bike-share-demand/blob/main/bike-share-thumbnail.png)](https://youtube.com/your-video-link)
+## Project (web-app)
+![Project Video](web-app.PNG)
 
 ## Introduction
 
