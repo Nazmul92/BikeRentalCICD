@@ -14,12 +14,12 @@ output: github_document
 ![Docker](https://img.shields.io/badge/Docker-20.10-lightblue.svg)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-yellow.svg)
 
-## Project (web-app)
-![Project Video](web-app.PNG)
-
 ## Introduction
 
-Bike-sharing services generate vast amounts of data that can be analyzed to predict demand based on various factors like season, weather, and working days. This project uses **machine learning** to forecast bike rentals and provides an **API** to serve predictions.
+Bike-sharing services generate vast amounts of data that can be analyzed to predict demand based on various factors like season, weather, and working days. This project uses **machine learning** to forecast bike rentals and provides an **API** to serve predictions. CICD (GitHub action) pipeline is utilized for test, build, and deployement to Render cloud.
+
+## Project (web-app)
+![Project Video](web-app.PNG)
 
 ## Dataset
 
@@ -59,14 +59,35 @@ Model training is detailed in `ml-implementation.ipynb`, covering:
 - Model Training & Evaluation
 - Hyperparameter Tuning
 
-# API Endpoints
+## Deployment
 
-## `GET /`
+- **Docker** is used to containerize the application, ensuring a consistent environment across deployments.  
+- **GitHub Actions (CI/CD)** automates the deployment pipeline, testing and deploying the model whenever changes are pushed to the repository.  
+- The application is hosted using **Render**.  
+
+## API Endpoints
+
+### `GET /`
 Renders the home page.
 
-## `POST /predict`
-Accepts a JSON object with input features and returns predicted bike demand.
+### `POST /predict`
+Accepts JSON input with feature values and returns predicted bike rentals.
 
-### Example Request
+## Running the Project Locally
+
+### Prerequisites
+Ensure you have **Docker** installed.
+
+### Steps
+
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"season": 1, "yr": 0, "mnth": 1, "holiday": 0, "weekday": 6, "workingday": 0, "weathersit": 2, "temp": 0.344, "atemp": 0.364, "hum": 0.806, "windspeed": 0.160}' http://localhost:5000/predict
+# Clone the repository
+git clone https://github.com/your-repo/bike-share-demand.git
+cd bike-share-demand
+
+# Build the Docker image
+docker build -t bike-share-app .
+
+# Run the container
+docker run -p 8000:8000 bike-share-app
+
